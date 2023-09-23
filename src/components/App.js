@@ -76,7 +76,13 @@ export default function App() {
         />
         <AddFriend onAddPerson={addPerson} />
       </div>
-      {selected && <SplitBill selected={selected} onSplited={splited} />}
+      {selected && (
+        <SplitBill
+          selected={selected}
+          onSplited={splited}
+          key={newFri.find((item) => item.name === selected).id}
+        />
+      )}
     </div>
   );
 }
